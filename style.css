@@ -1,0 +1,432 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --AlmostWhite: hsl(0, 0%, 98%);
+    --MediumGray: hsl(0, 0%, 41%);
+    --AlmostBlack: hsl(0, 0%, 8%);
+}
+
+body {
+    background-color: var(--AlmostWhite);
+}
+
+/* -------------------------------nav----------------------- */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 20px auto;
+}
+
+.left-nav {
+    display: flex;
+    flex-basis: 80%;
+}
+
+.nav-list {
+    padding-left: 60px;
+    margin-top: 5px;
+}
+
+.nav-list li {
+    display: inline-block;
+    padding-right: 30px;
+    list-style: none;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: black;
+    opacity: 0.5;
+    transition: all .3s;
+}
+
+.nav-list li a:hover {
+    opacity: 1;
+}
+
+span {
+    display: inline-block;
+    margin-right: 20px;
+    opacity: 0.5;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+span:hover {
+    opacity: 1;
+}
+
+.features-info {
+    position: absolute;
+    top: 70px;
+    left: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    border-radius: 10px;
+    height: 0;
+    overflow: hidden;
+    transition: all .5s;
+}
+
+.show-features {
+    height: 26vh;
+    box-shadow: 0 0 10px 0 grey;
+    padding: 20px;
+}
+
+.features-info img {
+    padding-right: 10px;
+}
+
+.features-info {
+    color: gray;
+}
+
+.company-info {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 0;
+    overflow: hidden;
+    transition: all .5s;
+    top: 70px;
+    left: 330px;
+    background-color: white;
+    border-radius: 10px;
+    color: gray;
+}
+
+.show-company {
+    height: 20vh;
+    padding: 20px;
+    box-shadow: 0 0 10px 0 grey;
+}
+
+[class ^="arrow-"] {
+    position: relative;
+    top: -2px;
+    transition: all 1s;
+}
+
+.move-arrow {
+    transform: rotateX(180deg);
+}
+
+.btn-register {
+    padding: 8px 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 black;
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: none;
+    height: 20px;
+    margin-top: 7px;
+    cursor: pointer;
+}
+
+.new-nav {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background-color: var(--AlmostWhite);
+    font-size: 22px;
+    color: grey;
+    width: 0;
+    overflow: hidden;
+    transition: all .5s;
+}
+
+.show-new-nav {
+    padding: 30px;
+    width: 250px;
+}
+
+.abc {
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+
+.new-nav a,
+.careers,
+.about {
+    text-decoration: none;
+    color: grey;
+    cursor: pointer;
+}
+
+.new-features {
+    height: 0;
+    min-height: 30px;
+    overflow: hidden;
+    transition: all .5s;
+}
+
+.show-new-nav-features {
+    min-height: 180px;
+}
+
+.new-nav-features {
+    padding: 20px;
+}
+
+.features-list {
+    margin-bottom: 5px;
+}
+
+.features-list img {
+    margin-right: 10px;
+}
+
+.new-company {
+    height: 30px;
+    overflow: hidden;
+    transition: all .5s;
+}
+
+.show-new-nav-company {
+    height: 150px;
+}
+
+.new-nav-company {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.features * {
+    cursor: pointer;
+}
+
+.new-company * {
+    cursor: pointer;
+}
+
+.about {
+    margin-top: 10px;
+}
+
+/* ---------------------main -----------------------*/
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-left: 5%;
+    margin: 60px auto 0;
+}
+
+.left-container {
+    flex-basis: 50%;
+}
+
+.left-container h1 {
+    padding-top: 50px;
+    font-size: 60px;
+}
+
+.left-container p {
+    margin-top: 40px;
+    opacity: 0.9;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.btn-learn {
+    padding: 10px 20px;
+    margin-top: 40px;
+    border: 2px solid var(--AlmostBlack);
+    background-color: var(--AlmostBlack);
+    color: white;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    transition: all .3s;
+}
+
+.btn-learn:hover {
+    background-color: var(--AlmostWhite);
+    border: 2px solid black;
+    color: black;
+}
+
+.company-img {
+    display: flex;
+    gap: 20px;
+    margin-top: 60px;
+}
+
+.company-img img {
+    height: 25px;
+    cursor: pointer;
+}
+
+.right-container {
+    flex-basis: 40%;
+}
+
+.right-container img {
+    width: 480px;
+    height: 450px;
+}
+
+/* ----------------------------responsivness---------------------- */
+
+
+@media (max-width:1200px) {
+    .left-container h1 {
+        font-size: 30px;
+    }
+
+    .left-container p {
+        font-size: 14px;
+    }
+
+    .company-img img {
+        height: 20px;
+    }
+
+    .right-container img {
+        width: 400px;
+        height: 380px;
+    }
+}
+
+@media (max-width:1000px) {
+    .left-container h1 {
+        font-size: 20px;
+    }
+
+    .left-container p {
+        font-size: 12px;
+    }
+
+    .company-img img {
+        height: 15px;
+    }
+
+    .company-img {
+        gap: 10px;
+    }
+
+    .right-container img {
+        width: 350px;
+        height: 320px;
+    }
+
+    .btn-learn {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width:800px) {
+
+    .nav-list {
+        display: none;
+    }
+
+    .nav-menu {
+        display: block;
+    }
+
+    .right-nav {
+        display: none;
+    }
+
+    .features-info {
+        display: block;
+    }
+
+    .company-info {
+        display: block;
+    }
+
+    .main {
+        flex-direction: column-reverse;
+        width: 100%;
+        margin: 20px auto 0;
+        text-align: center;
+    }
+
+    .right-container {
+        width: 80%;
+        margin: 20px auto;
+    }
+
+    .right-container img {
+        width: 100%;
+        height: 500px
+    }
+
+    .left-container {
+        margin: 20px auto;
+    }
+
+    .left-container h1 {
+        font-size: 40px;
+    }
+
+    .left-container p {
+        width: 70%;
+        margin: 20px auto 0;
+        font-size: 20px;
+    }
+
+    .left-container button {
+        padding: 10px 20px;
+        font-size: 20px;
+    }
+
+    .company-img {
+        margin-top: 40px;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .company-img img {
+        height: 25px;
+    }
+}
+
+@media (max-width:500px) {
+    .right-container {
+        width: 100%;
+    }
+
+    .left-container h1 {
+        font-size: 30px;
+    }
+
+    .left-container p {
+        font-size: 18px;
+        width: 80%;
+    }
+
+    .company-img {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .company-img img {
+        width: 30%;
+    }
+}
